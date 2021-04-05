@@ -37,7 +37,9 @@ const update = async () => {
                     let msgToSend = "";
                     if (body.status == "Signed") msgToSend = "Jailbreaks.app is now signed!\nhttps://jailbreaks.app";
                     else msgToSend = "Jailbreaks.app has been revoked. :(";
-                    client.users.cache.find(user => user.id === id).send(msgToSend);
+                    try {
+                        client.users.cache.find(user => user.id === id).send(msgToSend);
+                    } catch (e) {}
                 } else {
                     console.log(err);
                 }
@@ -47,7 +49,7 @@ const update = async () => {
 }
 
 // Ensure db values exist
-if (!db.has('dmlist.ids')) 
+if (!db.has('dmlist.ids'))
     db.set('dmlist.ids', [])
 
 module.exports = {
