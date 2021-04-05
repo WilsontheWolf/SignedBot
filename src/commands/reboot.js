@@ -2,13 +2,8 @@ module.exports = {
     name: "reboot",
     description: "Reboot Command",
     execute(client, message, config) {
-        try {
-            if (!client.devs.includes(message.author.id)) return;
-            message.channel.send("Rebooting...")
-            process.exit()
-        } catch (e) {
-            console.log(e)
-            client.guilds.cache.get(config.logchannel[0]).channels.cache.get(config.logchannel[1]).send("ERROR with ``" + module.exports.name + "``\n```" + e + "```")
-        }
+        if (!client.devs.includes(message.author.id)) return;
+        message.channel.send("Rebooting...")
+        process.exit()
     }
 }
