@@ -32,53 +32,6 @@ client.on("message", (message) => {
                 message.inlineReply('An error occurred running that command!');
             }
         }
-        switch (msgFiltered.split(" ")[0]) {
-        case "prefix":
-            commands.get("prefix").execute(client, message, config, msgFiltered);
-            break;
-        case "suggest":
-            commands.get("suggest").execute(client, message, config, msgFiltered);
-            break;
-        case "reportbug":
-            commands.get("reportbug").execute(client, message, config, msgFiltered);
-            break;
-        case "optin":
-            commands.get("optin").execute(client, message, config);
-            break;
-        case "optout":
-            commands.get("optout").execute(client, message, config);
-            break;
-        case "serverlist":
-            commands.get("serverlist").execute(client, message, config);
-            break;
-        case "stats":
-            commands.get("stats").execute(client, message, config);
-            break;
-        case "help":
-            commands.get("help").execute(client, message, config);
-            break;
-        case "status":
-            commands.get("status").execute(client, message, config);
-            break;
-        case "inv":
-            commands.get("invite").execute(client, message, config);
-            break;
-        case "invite":
-            commands.get("invite").execute(client, message, config);
-            break;
-        case "support":
-            commands.get("support").execute(client, message, config);
-            break;
-        case "changelog":
-            commands.get("changelog").execute(client, message, config);
-            break;
-        case "eval":
-            commands.get("eval").execute(client, message, config);
-            break;
-        case "reboot":
-            commands.get("reboot").execute(client, message, config);
-            break;
-        }
         switch (mentionFiltered.split(" ")[0]) {
         case "":
             message.inlineReply(`Hi! I'm SignedBot.\nMy prefix on this guild is \`\`${db.get(`prefix-${message.guild.id}`)}\`\`\nYou can also ask me for help by mentioning me, like this: \`\`@SignedBot help\`\``)
