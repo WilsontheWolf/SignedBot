@@ -25,7 +25,7 @@ const update = async () => {
 
     db.get("dmlist.ids").forEach(function (id) {
         if (id != "Bruh") {
-            const filePath = path.join(__dirname, 'status/status.txt');
+            const filePath = path.join(__dirname, '/../status/status.txt');
             fs.readFile(filePath, { encoding: 'utf-8' }, function (err, data) {
                 if (!err) {
                     if (data == body) { return; } else {
