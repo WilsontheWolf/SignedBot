@@ -1,5 +1,5 @@
-var forever = require('forever-monitor');
-var child = new (forever.Monitor)('./index.js', {
+const forever = require('forever-monitor');
+const child = new (forever.Monitor)('./index.js', {
     max: 999,
     silent: true,
     args: []
